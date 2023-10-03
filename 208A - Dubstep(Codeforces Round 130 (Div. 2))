@@ -1,0 +1,27 @@
+remeber to 
+#include <iostream>
+using namespace std;
+
+int main() {
+    string s;
+    cin >> s;
+    int i = 0;
+    bool insideWord = false;
+
+    while (i < s.length()) {
+        if (s[i] == 'W' && s[i + 1] == 'U' && s[i + 2] == 'B') {
+            i += 3;
+            if (insideWord) {
+                cout << ' ';
+                insideWord = false;
+            }
+        } else {
+            cout << s[i];
+            i++;
+            insideWord = true;
+        }
+    }
+
+    cout << endl;
+    return 0;
+}
