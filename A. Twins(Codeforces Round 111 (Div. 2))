@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    int a[n];
+    int sum=0;
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+        sum=sum+a[i];
+    }
+    sort(a,a+n, greater<int>());
+    int q=0,count=1;
+    for(int i=0;i<n;i++){
+        q=q+a[i];
+        if(q<=(sum-q)){
+            count++;
+        }
+        
+    }
+    cout<<count<<endl;   
+    return 0;
+}
